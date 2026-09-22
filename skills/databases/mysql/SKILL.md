@@ -6,6 +6,14 @@ description: "MySQL/InnoDB operations: schema, indexing, transactions, locking, 
 # mysql
 
 InnoDB reality: mind the isolation default, the locking reads, and the optimizer's mood.
+## Inspection
+
+Check server version, storage engines in use, slow-query log, replication topology, and backup/restore history.
+
+## Decision rules
+
+InnoDB default; composite indexes ordered by selectivity; short transactions; keyset pagination on large mutable sets; tested restores.
+
 
 ## Activate when
 
@@ -27,3 +35,11 @@ InnoDB reality: mind the isolation default, the locking reads, and the optimizer
 ## References
 - `../fundamentals/`, `../database-security/`.
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (mysql).
+
+## Failure modes
+
+MyISAM tables lingering; SELECT * with filesorts in hot paths; replicas never lag-checked; backups never restored in drill.
+
+## Escalation
+
+Postgres comparison → databases/postgres-operations; roles → databases/database-security.

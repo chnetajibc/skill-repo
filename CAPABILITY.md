@@ -3,6 +3,7 @@
 Honest classification per capability. STRONG = dedicated operational skill with procedure + verification.
 ADEQUATE = covered well enough for autonomous work. PARTIAL = present but thin or scattered.
 MISSING = absent. Scale statements, not aspirations.
+Coverage is exercised by `evals/tasks` (A-E) and `research/documentation-search` behavior tests.
 
 ## Engineering
 

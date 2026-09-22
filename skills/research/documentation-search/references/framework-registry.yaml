@@ -447,6 +447,18 @@ express:
   official_docs: https://expressjs.com/
   official_repository: https://github.com/expressjs/express
   version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock]
+vue:
+  ecosystem: js-framework
+  official_docs: https://vuejs.org/
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock]
+angular:
+  ecosystem: js-framework
+  official_docs: https://angular.dev/
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock]
+django:
+  ecosystem: python-web
+  official_docs: https://docs.djangoproject.com/
+  version_files: [pyproject.toml, requirements.txt, uv.lock]
 chakra:
   ecosystem: js-components
   official_docs: https://chakra-ui.com/

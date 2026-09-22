@@ -6,6 +6,14 @@ description: "Define local and small-prod stacks with Docker Compose: minimal im
 # docker-compose
 
 One command to a working stack; production habits from the first file.
+## Inspection
+
+Inventory services, dependency images + pins, env/secret wiring, volumes, networks, and healthcheck coverage.
+
+## Decision rules
+
+One command to a working stack; pinned digests; env from files/vault never committed; healthchecks gating dependents.
+
 
 ## Activate when
 
@@ -25,3 +33,11 @@ One command to a working stack; production habits from the first file.
 
 ## References
 - Related: `../../tooling/containers/`, `../../databases/postgres-operations/`.
+
+## Failure modes
+
+Floating tags; secrets committed in env files; no healthchecks so dependents race; volumes wiping data on recreate.
+
+## Escalation
+
+Image hardening → tooling/containers; production orchestration → cloud/*.

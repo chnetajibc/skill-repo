@@ -6,6 +6,14 @@ description: "Run GitHub issues, PRs, reviews, and releases: small diffs, eviden
 # pr-workflow
 
 Small diffs, clear intent, verified discussion. The PR describes why; the diff proves what.
+## Inspection
+
+Read the full diff (not just files), linked issue, CI status, and prior review threads before commenting.
+
+## Decision rules
+
+Small diffs merge fast; findings need evidence + severity; every comment resolves to a change or an evidence-backed reply; re-review after history rewrites.
+
 
 ## Activate when
 
@@ -22,3 +30,11 @@ Small diffs, clear intent, verified discussion. The PR describes why; the diff p
 3. Iterate: answer every comment with a change or an evidence-backed reply (change or evidence-backed reply); re-request review after history rewrites.
 4. Protect: required checks, CODEOWNERS coverage, dismiss-stale-approvals on force-push, Dependabot + advisory triage.
 5. Release: semver tag, changelog entry, migration notes; verify artifacts install cleanly.
+
+## Failure modes
+
+Rubber-stamp approvals; style-preference comments posed as defects; approving with unresolved threads; merging red CI.
+
+## Escalation
+
+Mechanics (rebase/conflicts) → git/*; deep findings → core/code-review.

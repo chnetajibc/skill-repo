@@ -6,6 +6,14 @@ description: "Build systems: source-compile-bundle-transform-test-package-artifa
 # build-systems
 
 Reproduce locally, then fix the system — not the symptom.
+## Inspection
+
+Reproduce with clean tree + locked deps; identify the failing layer (resolve/compile/bundle/test/package) before theorizing.
+
+## Decision rules
+
+Fix at the layer found; suspect caches, then env drift, then native deps; pin what drifted; document the toolchain.
+
 
 ## Activate when
 
@@ -22,3 +30,11 @@ Reproduce locally, then fix the system — not the symptom.
 3. Suspect caches first (stale, poisoned, or machine-specific); then environment drift (toolchain versions vs lockfiles/CI images); then native deps (headers, ABI, platform).
 4. Fix at the layer found; pin what drifted; document the required toolchain in the repo.
 5. Verify: clean build green twice in a row, CI agrees with local, no secrets in build logs.
+
+## Failure modes
+
+Rewriting the pipeline for a cache problem; unpinned toolchain drifting between local and CI; secrets in build logs.
+
+## Escalation
+
+CI config → devops/github-actions; dependency selection → tooling/package-management.

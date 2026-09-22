@@ -6,6 +6,14 @@ description: "Branching strategy and lifecycle: GitHub Flow default, trunk-based
 # git-branching
 
 One feature, one branch, one short life. Strategy follows release reality, not habit.
+## Inspection
+
+Check team size, release cadence, parallel supported versions, and current branch lifetimes before prescribing a model.
+
+## Decision rules
+
+GitHub Flow default; trunk-based only with CI + flags; long-lived branches only for parallel releases; delete after merge.
+
 
 ## Activate when
 
@@ -23,3 +31,11 @@ One feature, one branch, one short life. Strategy follows release reality, not h
 4. Wrong-branch commits: move with `checkout -b` + reset/cherry-pick (see git-recovery), don't drag unrelated work along.
 5. PR prep: atomic commits, protection requirements checked, `gh` PR if available (see github/pr-workflow).
 6. Verify: default branch deployable, stale branches pruned, protection active.
+
+## Failure modes
+
+GitFlow overhead for continuous-deploy SaaS; branches living for weeks; stale branches nobody owns; protection missing on main.
+
+## Escalation
+
+Daily mechanics → git/git-workflow; release branches → git/git-release.

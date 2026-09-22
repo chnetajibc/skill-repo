@@ -22,3 +22,11 @@ Deny by default; every path checks; every check is tested cross-user.
 3. Test as an attacker: unauthenticated, low-privilege, cross-user, cross-tenant probes per endpoint; IDOR matrix green before merge.
 4. Tenant isolation: scope every query; support/impersonation access audited (see saas/multitenancy-billing).
 5. Verify: probe results recorded, no fail-open defaults, authorization errors free of enumeration oracles.
+
+## Failure modes
+
+- Checks on most routes but not export/admin/debug/batch paths; client-enforced roles; fail-open defaults after refactor; tenant scoping dropped in a new query; error messages distinguishing 'no such object' from 'forbidden'.
+
+## Escalation
+
+- Full audit → security/secure-baseline; Spring wiring → frameworks/spring-security.

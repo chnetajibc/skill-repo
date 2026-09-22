@@ -60,6 +60,18 @@ PROJECT: This project uses version Y.
 DECISION: Therefore implement Z.
 ```
 
+## Confidence and scope
+
+Rate every researched claim HIGH (official docs for the installed version + runtime proof), MEDIUM (official docs, version close but unproven here), or LOW (community/ambiguous). LOW confidence triggers more inspection, never silent version selection. Cover the full scope: monorepo workspace packages (detect per-package manifests, not just root), transitive dependencies when the behavior flows through them, generated code (read the generator + schema, not just output), and project-local wrappers/abstractions (which override library defaults — map them first).
+
+## Docs-vs-observed reconciliation
+
+When official docs conflict with actual repo behavior, reconcile explicitly: official documentation + installed version + observed behavior + tests/runtime evidence. Possible outcomes: repo pins an older behavior (follow repo, note upgrade path), repo works around a docs gap (verify workaround still holds on this version), or repo is wrong (fix with evidence). Never silently let community content override L1–L7.
+
+## Evidence record
+
+For important decisions record: installed version, documentation consulted + why it applies, decision, verification. Classify each line FACT / PROJECT FACT / DECISION / ASSUMPTION / UNKNOWN. Never promote ASSUMPTION or UNKNOWN to FACT. Proportionality: full records for version/security/architectural calls, one line otherwise.
+
 ## Source fallback (docs ambiguous)
 
 1. Official GitHub repository source code. 2. Official tests (most valuable for actual supported behavior). 3. Release notes. 4. Migration guides. 5. Official issues if necessary. Do NOT jump to random community posts.

@@ -6,6 +6,14 @@ description: "Next.js App Router: Server/Client components, Server Actions, Rout
 # nextjs
 
 App Router by generation: detect the major, then follow its rules — Server by default, client at the leaves.
+## Inspection
+
+Confirm the Next.js major, router generation (App vs Pages), rendering per route, data-fetching sites, and cache/revalidation config.
+
+## Decision rules
+
+App Router rules for App projects (never mix generations); Server Components default; fetch on server with explicit cache policy; metadata per route.
+
 
 ## Activate when
 
@@ -27,3 +35,11 @@ App Router by generation: detect the major, then follow its rules — Server by 
 
 ## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (nextjs, vercel, react).
+
+## Failure modes
+
+Pages patterns pasted into App Router; client components at page root killing streaming; uncached fetches on hot routes; middleware as sole authz.
+
+## Escalation
+
+Rendering/architecture → frameworks/react; SEO specifics → frontend/technical-seo.

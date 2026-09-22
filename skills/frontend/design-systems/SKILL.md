@@ -6,6 +6,14 @@ description: "Design systems: typography, spacing, contrast, tokens, shadcn/Tail
 # design-systems
 
 System first, screens second: tokens and primitives before one-off styles.
+## Inspection
+
+Audit current tokens, primitives, and off-system one-offs; count duplications of the same visual job.
+
+## Decision rules
+
+Tokens before screens; primitives before pages; extend the system instead of bypassing it; kill near-duplicate components by merging.
+
 
 ## Activate when
 
@@ -24,3 +32,11 @@ System first, screens second: tokens and primitives before one-off styles.
 
 ## References
 - Style/palette research via official component docs (registry: `../../research/documentation-search/references/framework-registry.yaml` — tailwind, shadcn, radix, mui); library mechanics: `../ui-libraries/`.
+
+## Failure modes
+
+Raw hex/spacing outside tokens; default-palette look; three button variants doing one job; dark mode as afterthought.
+
+## Escalation
+
+Library mechanics → frontend/ui-libraries; layout → frontend/responsive-design.

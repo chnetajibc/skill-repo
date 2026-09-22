@@ -6,6 +6,14 @@ description: "Audit AI agents and MCP servers for prompt injection, over-permiss
 # agent-security
 
 Treat prompts, tool output, retrieved content, webhooks, and client-provided identity fields as untrusted until a boundary validates them.
+## Inspection
+
+Inventory tools, permissions, data stores, egress paths, and who can invoke what; trace where untrusted text can reach the model or tool calls.
+
+## Decision rules
+
+Least privilege per tool; confirmation on destructive actions; output filtering for secrets/PII; budgets + logging on every loop.
+
 
 ## Activate when
 
@@ -26,3 +34,11 @@ Treat prompts, tool output, retrieved content, webhooks, and client-provided ide
 5. Test: run prompt-injection probes (direct + indirect via retrieved content) and assess LLM-app risk against OWASP LLM Top 10.
 6. Report: permission findings, injection paths with reproduction steps, guardrail gaps, residual risk + owner.
 7. Verify: re-run probes after fixes (previously failing probe now blocked + logged), confirm destructive actions require confirmation end to end, never declare "agent is safe" — report residual risk with an owner.
+
+## Failure modes
+
+Over-permissioned MCP servers; tool output trusted as instructions; no confirmation on irreversible actions; secrets in memory stores.
+
+## Escalation
+
+App-code findings → security/secure-baseline; MCP mechanics → ai/mcp-engineering.

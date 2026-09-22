@@ -23,3 +23,11 @@ Schema, queries, and indexes ship together — proven by EXPLAIN, not by intuiti
 4. Deletion: soft when audit/restoration matters, else hard with documented cascades.
 5. Migrations: expand→migrate→contract with down-paths (see backend/migrations).
 6. Verify: EXPLAIN evidence, migration up+down on scratch, concurrency test where locking is used.
+
+## Failure modes
+
+- Indexes guessed without EXPLAIN; N+1 on the hot path; unbounded pagination; soft-delete breaking uniqueness; migration without a down-path rehearsed on copy.
+
+## Escalation
+
+- Engine specifics → databases/postgres-operations, mysql; roles → databases/database-security.

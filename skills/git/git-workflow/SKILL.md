@@ -6,6 +6,14 @@ description: "Everyday Git workflow: branch, commit, push, PR. Trunk-based defau
 # git-workflow
 
 Keep main deployable; make small, reviewable, revertable history.
+## Inspection
+
+Inspect branch state, remote tracking, and whether commits are shared before choosing merge/rebase/amend/force-push.
+
+## Decision rules
+
+Private branch → rebase + force-with-lease; shared history → merge/revert only; messy tree → split into atomic commits before pushing.
+
 
 ## Activate when
 
@@ -23,3 +31,11 @@ Keep main deployable; make small, reviewable, revertable history.
 4. Push: `--force-with-lease` on your own pushed branch after rebase; never `--force` on shared history.
 5. Tool gates: IF `gh` exists, use it for PR create/status; ELSE use the hosting UI. IF worktrees fit parallel streams, one branch per worktree.
 6. Verify: `git status` clean-or-intentional, CI green, PR linked to issue.
+
+## Failure modes
+
+Force-push without lease; pushing a dirty/diverged tree blind; stacking unrelated work on one branch; rebasing branches others build on.
+
+## Escalation
+
+Lost work → git/git-recovery; PR process → github/pr-workflow.

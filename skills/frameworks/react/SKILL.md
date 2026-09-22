@@ -6,6 +6,14 @@ description: "React: component architecture, state ownership, effects, data fetc
 # react
 
 One owner per datum: component state until shared, server state in a query layer, global only for cross-cutting.
+## Inspection
+
+Map component tree, state owners, data-fetching sites, effect dependencies, and rendering hot spots.
+
+## Decision rules
+
+State colocated until proven shared; server state in a query layer; effects synchronize only, with cleanup; memoize measured hot spots, not everything.
+
 
 ## Activate when
 
@@ -26,3 +34,11 @@ One owner per datum: component state until shared, server state in a query layer
 
 ## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (react, react-router, tanstack-query, zustand, react-hook-form).
+
+## Failure modes
+
+Duplicated/mirrored state; effects without cleanup; fetch waterfalls in render; memo-everything with no measurement.
+
+## Escalation
+
+Generation behavior → frameworks/nextjs; store choice → frontend/state-management.

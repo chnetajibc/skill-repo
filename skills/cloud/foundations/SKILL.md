@@ -6,6 +6,14 @@ description: "Cloud-agnostic principles: least-privilege IAM, network isolation,
 # foundations
 
 Principles transfer, service names do not. Decide on principles, then resolve against the provider's current docs.
+## Inspection
+
+Inventory workloads, data sensitivity, compliance needs, traffic shape, team ops capacity, and current provider commitments.
+
+## Decision rules
+
+Managed services by default; least privilege always; multi-cloud only with a named reason (residency, negotiation, DR) — never by accident.
+
 
 ## Activate when
 
@@ -28,3 +36,11 @@ Principles transfer, service names do not. Decide on principles, then resolve ag
 
 ## References
 - Provider leaves: `../aws-foundations/`, `../gcp/`, `../azure/`.
+
+## Failure modes
+
+Premature multi-cloud; self-hosting undifferentiated services; open security groups/SGs 'temporarily'; no cost alerts until the bill.
+
+## Escalation
+
+Provider specifics → cloud/aws-foundations, gcp, azure (resolved against current docs).

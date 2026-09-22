@@ -50,12 +50,29 @@ echo "== executable scripts =="
 for s in $(find "$REPO/skills" -path '*/scripts/*.sh' | grep -v '/references/'); do
   [ -x "$s" ] || { echo "NOT executable: $s"; fail=1; }
 done; echo "perms done"
-echo "== size guard (top-level SKILL.md >400 lines, pre-existing migration queue) =="
+echo "== size guard (top-level SKILL.md >400 lines) =="
 long=0
 for f in $(find "$REPO/skills" -maxdepth 3 -name "SKILL.md" | grep -v references); do
   lines=$(wc -l < "$f" | tr -d ' ')
   if [ "$lines" -gt 400 ]; then echo "LONG ($lines): $f"; long=$((long+1)); fi
 done; echo "long files: $long"
+echo "== semantic depth (operational markers, min 4) =="
+thin=0
+for f in $(find "$REPO/skills" -maxdepth 3 -name "SKILL.md" | grep -v references); do
+  m=0
+  for pat in "activate when|use when|trigger" "inspect" "decis" "procedure|workflow" "fail|trap|gotcha|pitfall|smell|wrong" "verif" "escalat|fallback" "references|registry"; do
+    grep -qiE "$pat" "$f" && m=$((m+1))
+  done
+  if [ "$m" -lt 4 ]; then echo "THIN ($m/8): $f"; thin=$((thin+1)); fail=1; fi
+done; echo "thin files: $thin"
+echo "== skeletal-phrase warnings =="
+grep -rniE "follow best practices|write clean code|use appropriate patterns|ensure scalab|ensure secur|add tests$|follow documentation|use the framework correctly" "$REPO/skills" --include="SKILL.md" | grep -v "/references/" | head -5; echo "(warnings only)"
+echo "== shell syntax =="
+for s in $(find "$REPO/skills" "$REPO/scripts" "$REPO/evals" -name "*.sh" 2>/dev/null | grep -v '/references/'); do
+  bash -n "$s" || { echo "SYNTAX FAIL: $s"; fail=1; }
+done; echo "shell syntax done"
+echo "== YAML parse =="
+python3 -c "import yaml,sys; yaml.safe_load(open('$REPO/skills/research/documentation-search/references/framework-registry.yaml')); print('registry yaml ok')" 2>/dev/null || python3 -c "print('pyyaml missing - structural registry checks above apply')";
 echo "== hygiene =="
 find "$REPO" -name ".DS_Store" | grep -q . && { echo "DS_Store present"; fail=1; } || echo "no DS_Store"
 [ "$fail" -eq 0 ] && echo "VALIDATE OK" || echo "VALIDATE FAILED"

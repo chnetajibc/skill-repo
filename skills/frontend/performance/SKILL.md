@@ -6,6 +6,14 @@ description: "Performance measure-first: profile CPU/mem/IO/network/DB/bundle/re
 # performance
 
 Measure first, optimize second, prove third. Intuition-only optimization is a defect source.
+## Inspection
+
+Profile first: lab (Lighthouse) + field data; identify the bottleneck layer (network, JS, render, images, fonts, backend).
+
+## Decision rules
+
+Fix the measured bottleneck only; budgets per route (JS KB, image weight, LCP/INP/CLS targets); regressions block like test failures.
+
 
 ## Activate when
 
@@ -22,3 +30,11 @@ Measure first, optimize second, prove third. Intuition-only optimization is a de
 3. Re-measure on the same workload; record before/after numbers in the PR.
 4. Guard: budgets + regression tests so the win survives; no speculative micro-optimizations.
 5. Verify: targets met on representative devices/networks, no functional regression, numbers quoted.
+
+## Failure modes
+
+Optimizing unmeasured code; image weight ignored while JS is micro-tuned; third-party scripts unexamined; lab-green but field-red.
+
+## Escalation
+
+Backend slowness → backend/* + databases/*; asset weight → frontend/media-assets.

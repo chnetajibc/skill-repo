@@ -6,6 +6,14 @@ description: "FastAPI: routers versioned /api/v1, DI via Depends, Pydantic reque
 # fastapi
 
 Thin routers, injected dependencies, validated boundaries: routes declare, services decide.
+## Inspection
+
+Map routers, DI graph, Pydantic models (request/response vs domain), middleware order, lifespan handlers, background tasks.
+
+## Decision rules
+
+Thin routers + service layer; Depends for sessions/repos/auth; separate wire models from domain entities; async endpoints with no blocking calls.
+
 
 ## Activate when
 
@@ -27,3 +35,11 @@ Thin routers, injected dependencies, validated boundaries: routes declare, servi
 
 ## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (fastapi, pydantic, starlette, sqlalchemy, alembic).
+
+## Failure modes
+
+Business logic in route functions; ORM entities as response models; blocking I/O inside async handlers; middleware ordered wrong (auth after routes).
+
+## Escalation
+
+Contract theory → architecture/api-design; authz review → backend/authorization.

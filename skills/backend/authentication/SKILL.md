@@ -22,3 +22,11 @@ Prove identity server-side; store secrets like attackers read your repo — beca
 3. Tokens: short lifetimes, refresh rotation with reuse detection, revocation path; cookies `HttpOnly`/`Secure`/`SameSite`, CORS allowlisted.
 4. Secrets externalized (vault/env); none in code, logs, or error messages.
 5. Verify: auth matrix (valid/expired/forged/absent) green, cross-checked against docs for the installed library versions.
+
+## Failure modes
+
+- JWT accepted without issuer/audience/expiry checks; sessions without fixation protection; passwords with fast hashes; CSRF disabled globally 'temporarily'; secrets in error responses or logs; clock-skew lockouts with no test.
+
+## Escalation
+
+- Spring wiring → frameworks/spring-security; protocol doubts → research/documentation-search for the installed library version.

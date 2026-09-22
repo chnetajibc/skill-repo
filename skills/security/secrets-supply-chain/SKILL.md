@@ -25,3 +25,11 @@ Secrets and supply-chain hygiene. Findings first, fixes by the code owner.
 3. CI: review workflows for pwn-request risk, expression injection (`${{ }}` with untrusted input), unpinned actions, over-scoped tokens, and cache poisoning (untrusted PRs must not run privileged jobs or exfiltrate secrets).
 4. Report: package, version, advisory/CVE, reachability evidence, fix (pinned upgrade), and regression note.
 5. Verify: re-run the applicable scanner (`npm audit`, `pip-audit`, `govulncheck`, `trivy`, `osv-scanner`) if installed; if no scanner is available, say so explicitly and rely on manual patterns only.
+
+## Failure modes
+
+- Deleting a leaked key instead of rotating it; auditing direct deps but ignoring transitive ones; scanner-green treated as proof (scanners miss reachability context); unpinned CI actions drifting.
+
+## Escalation
+
+- Active incident (exploited key, malicious package) → incident owner immediately; do not wait for the audit to finish.

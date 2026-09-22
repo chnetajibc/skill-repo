@@ -1,0 +1,15 @@
+name: validate
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: structural validation
+        run: bash scripts/validate.sh
+      - name: documentation-behavior tests
+        run: bash skills/research/documentation-search/scripts/run-doc-behavior-tests.sh
+      - name: agent-task eval structure
+        run: bash evals/run-task-evals.sh

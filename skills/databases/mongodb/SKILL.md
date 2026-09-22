@@ -6,6 +6,14 @@ description: "MongoDB operations: document modeling, indexing, transactions, agg
 # mongodb
 
 Model by access pattern: documents shaped like the reads that fetch them.
+## Inspection
+
+Collect access patterns, document shapes, growth, consistency needs, and current slow-operation evidence.
+
+## Decision rules
+
+Embed for read-together, reference for shared/mutable; shard key on cardinality + locality evidence; transactions short, retried-safe.
+
 
 ## Activate when
 
@@ -28,3 +36,11 @@ Model by access pattern: documents shaped like the reads that fetch them.
 ## References
 - `../fundamentals/`, `../database-security/`.
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (mongodb).
+
+## Failure modes
+
+Unbounded arrays; missing indexes found via slow logs; multi-doc transactions held open; shard key on low-cardinality field.
+
+## Escalation
+
+Relational fit → databases/postgres-operations, mysql; security → databases/database-security.

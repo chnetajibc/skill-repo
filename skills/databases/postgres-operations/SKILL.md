@@ -6,6 +6,14 @@ description: "Design and operate PostgreSQL: EXPLAIN-first schema, indexes, migr
 # postgres-operations
 
 Ship schema + queries + indexes as one artifact; prove performance with EXPLAIN, not intuition.
+## Inspection
+
+Check version, slow queries (pg_stat_statements), index usage, bloat, replication lag, connection counts vs pool size.
+
+## Decision rules
+
+EXPLAIN before indexing; partial/expression indexes for skewed access; CONCURRENTLY for production index builds; pools sized to workload with statement timeouts.
+
 
 ## Activate when
 
@@ -30,3 +38,11 @@ Ship schema + queries + indexes as one artifact; prove performance with EXPLAIN,
 
 ## References
 - Related: `../../architecture/data-modeling/`, `../../backend/database-design/`.
+
+## Failure modes
+
+Missing index on the hot path; long transactions holding locks; autovacuum overwhelmed by write spikes; pool exhaustion under normal load.
+
+## Escalation
+
+Schema design → backend/database-design; roles → databases/database-security.

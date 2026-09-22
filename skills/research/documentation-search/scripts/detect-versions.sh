@@ -12,7 +12,7 @@ ver_grep() { grep -m1 -oE "$2" "$1" 2>/dev/null | head -1; }
 if [ -f "$ROOT/pyproject.toml" ]; then
   v=$(grep -m1 -E 'requires-python' "$ROOT/pyproject.toml" | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
   echo "python|${v:-unknown}|pyproject.toml"
-  for pkg in fastapi pydantic starlette sqlalchemy alembic pytest ruff; do
+  for pkg in fastapi pydantic starlette sqlalchemy alembic pytest ruff django djangorestframework psycopg psycopg2-binary asyncpg; do
     pv=$(grep -m1 -E "^${pkg}[ =<>~!]+|^\"${pkg}[ =<>~!]+|${pkg} *=" "$ROOT/pyproject.toml" | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
     [ -n "$pv" ] && echo "${pkg}|${pv}|pyproject.toml"
   done
@@ -20,18 +20,18 @@ fi
 [ -f "$ROOT/.python-version" ] && echo "python|$(cat "$ROOT/.python-version")|.python-version"
 if [ -f "$ROOT/requirements.txt" ]; then
   while IFS= read -r line; do
-    case "$line" in fastapi*|pydantic*|sqlalchemy*|pytest*) echo "$line" | sed -E 's/([A-Za-z0-9_.-]+)[=<>~! ]+([0-9][0-9A-Za-z.]*).*/\1|\2|requirements.txt/';; esac
+    case "$line" in fastapi*|pydantic*|sqlalchemy*|pytest*|django*|psycopg*|asyncpg*) echo "$line" | sed -E 's/([A-Za-z0-9_.-]+)[=<>~! ]+([0-9][0-9A-Za-z.]*).*/\1|\2|requirements.txt/';; esac
   done < "$ROOT/requirements.txt"
 fi
 
 # ---- JS/TS ----
 if [ -f "$ROOT/package.json" ]; then
-  for pkg in react next typescript expo electron express zod zustand vite eslint prettier tailwind; do
+  for pkg in react next typescript expo electron express zod zustand vite eslint prettier tailwind vue nuxt angular pg mysql2 mongoose ioredis mongodb prisma; do
     pv=$(grep -m1 -oE "\"${pkg}\"[[:space:]]*:[[:space:]]*\"[^\"]+\"" "$ROOT/package.json" | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
     [ -n "$pv" ] && echo "${pkg}|${pv}|package.json"
   done
   # Scoped UI libraries (package name -> tech label)
-  for pair in "@mui/material|mui @chakra-ui/react|chakra antd|antd @headlessui/react|headlessui react-aria|react-aria @radix-ui/react-slot|radix"; do
+  for pair in "@mui/material|mui @chakra-ui/react|chakra antd|antd @headlessui/react|headlessui react-aria|react-aria @radix-ui/react-slot|radix @prisma/client|prisma-client drizzle-orm|drizzle"; do
     pkg="${pair%%|*}"; label="${pair##*|}"
     pv=$(grep -m1 -oE "\"${pkg}\"[[:space:]]*:[[:space:]]*\"[^\"]+\"" "$ROOT/package.json" | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
     [ -n "$pv" ] && echo "${label}|${pv}|package.json"

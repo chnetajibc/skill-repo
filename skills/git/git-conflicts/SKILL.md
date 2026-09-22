@@ -6,6 +6,14 @@ description: "Resolve merge/rebase/cherry-pick conflicts: understand both sides,
 # git-conflicts
 
 Conflicts are review decisions, not typing exercises: understand intent on both sides first.
+## Inspection
+
+Read both sides' intent (log --merge) and the conflicted hunks before touching anything; note which side the PR's purpose favors.
+
+## Decision rules
+
+Resolve per hunk with intent preserved; never blanket ours/theirs on unread code; abort and split when the surface exceeds understanding.
+
 
 ## Activate when
 
@@ -22,3 +30,11 @@ Conflicts are review decisions, not typing exercises: understand intent on both 
 3. Mark resolved (`git add`), continue (`--continue`), and re-run the affected tests before pushing.
 4. Abort criteria: if the conflict surface exceeds understanding, `git merge --abort` / `git rebase --abort` and split the change smaller.
 5. Verify: full diff re-read, tests green, no conflict markers (`grep -r '<<<<<<<'`).
+
+## Failure modes
+
+Auto-resolving with ours/theirs; resolving without running tests; leaving markers in; pushing conflicted merges to shared branches.
+
+## Escalation
+
+Lost work during resolution → git/git-recovery.

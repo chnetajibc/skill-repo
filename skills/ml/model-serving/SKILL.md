@@ -6,6 +6,14 @@ description: "Ship ML models to production: versioning, eval-gated serving, GPU 
 # model-serving
 
 No model ships without an eval, a version, and a drift monitor.
+## Inspection
+
+Inventory model artifact, eval set, latency/throughput SLOs, GPU budget, and current serving path (or lack of one).
+
+## Decision rules
+
+Version data+code+weights together; eval-gate every promotion; batch where latency allows; optimize only profiled bottlenecks.
+
 
 ## Activate when
 
@@ -23,3 +31,11 @@ No model ships without an eval, a version, and a drift monitor.
 4. Evaluate: offline eval set + online shadow/canary; rollback on regression.
 5. Monitor: prediction drift, data validation failures, latency SLOs; retrain triggers documented.
 6. Verify: eval report, load test at p99, rollback drill.
+
+## Failure modes
+
+Unversioned weights; eval-free promotion; GPU idle while batching would do; drift unmonitored; training-serving skew.
+
+## Escalation
+
+Agent/RAG without custom models → ai/agent-architecture; infra → cloud/*.

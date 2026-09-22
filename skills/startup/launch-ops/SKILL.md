@@ -6,6 +6,14 @@ description: "Solo-founder launch operations: landing pages, SEO, analytics, onb
 # launch-ops
 
 Ship, measure, support, iterate. Every launch answers: who came, what worked, what broke.
+## Inspection
+
+Checklist state: landing page, analytics events firing, onboarding funnel, support inbox, changelog process, rollback path.
+
+## Decision rules
+
+One promise per page; measure activation before optimizing; automate only repetitive ops (receipts, dunning, status); humans on judgment.
+
 
 ## Activate when
 
@@ -23,3 +31,11 @@ Ship, measure, support, iterate. Every launch answers: who came, what worked, wh
 4. Support: docs + changelog per release; support inbox triaged into bugs vs features vs docs.
 5. Automate: only the repetitive (lead capture, receipts, dunning, status updates); keep humans on judgment.
 6. Verify: event fires end to end, page scores on performance/SEO checks, support loop closes within SLA.
+
+## Failure modes
+
+Launching without event tracking; optimizing before measuring; automating angry-customer conversations; changelog nobody writes.
+
+## Escalation
+
+Product spec → product/mvp-discovery; infra incidents → cloud/*, backend/production-readiness.
