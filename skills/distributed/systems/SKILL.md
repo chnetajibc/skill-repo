@@ -26,6 +26,4 @@ Design for failure: at-least-once delivery, idempotent receivers, bounded retrie
 6. Verify: duplicate-delivery test, consumer-restart test, dependency-down test, and a load test showing where the system sheds first.
 
 ## References
-
-- `references/upstream-distributed-systems/` (verbatim upstream patterns).
 - Related: `../../backend/concurrency/`, `../../backend/transactions/`, `../../architecture/observability/`.

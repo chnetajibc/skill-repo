@@ -24,7 +24,3 @@ Contracts first: one canonical resource model, one error envelope, versioning wi
 4. Idempotency: mutation endpoints accept idempotency keys where retries are possible.
 5. Evolution: additive first; version (`/v1`, headers, or negotiation) with deprecation headers, sunset dates, and migration notes; apply Hyrum's Law — every observable behavior is a dependency.
 6. Verify: contract tests for envelope + pagination + version negotiation; changelog entry for any surface change.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (bjornjee api-design), `references/source-2-verbatim/` (khasky awesome-api-design), `references/source-3-verbatim/` (addyosmani api-and-interface-design), `references/source-4-verbatim/` (magnus api-design-and-evolution).

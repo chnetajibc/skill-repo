@@ -22,11 +22,7 @@ Treat prompts, tool output, retrieved content, webhooks, and client-provided ide
 1. Inventory: tools, permissions, data stores, network egress, and who can invoke what.
 2. Injection surface: where untrusted text can reach the model or be quoted into tool calls; check for tool-call injection and indirect prompt injection via retrieved docs.
 3. Agency check: least privilege per tool, confirmation for destructive/irreversible actions, output filtering for PII/credentials, action budgets, and logging of agent actions.
-4. MCP review: over-permissioned servers, confused-deputy flows, data exposure across trust boundaries (see `references/upstream-mcp-server-review/`).
-5. Test: run prompt-injection probes from `references/upstream-prompt-injection-test/`; assess LLM-app risk per `references/upstream-llm-risk-assess/`.
+4. MCP review: least-privilege servers, no confused-deputy flows, no data exposure across trust boundaries.
+5. Test: run prompt-injection probes (direct + indirect via retrieved content) and assess LLM-app risk against OWASP LLM Top 10.
 6. Report: permission findings, injection paths with reproduction steps, guardrail gaps, residual risk + owner.
 7. Verify: re-run probes after fixes (previously failing probe now blocked + logged), confirm destructive actions require confirmation end to end, never declare "agent is safe" — report residual risk with an owner.
-
-## References
-
-- `references/upstream-mcp-server-review/`, `references/upstream-prompt-injection-test/`, `references/upstream-llm-risk-assess/`, `references/upstream-agent-security-audit/` (OWASP, verbatim).

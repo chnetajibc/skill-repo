@@ -24,7 +24,5 @@ Typed, tested, packaged Python — modules and functions first, classes where st
 5. Quality: Ruff lint+format, pytest with fixtures/factories, coverage as signal not target.
 6. Verify: typecheck + lint + tests green on the pinned interpreter; packaging installs clean (`pip install .` in fresh venv or `uv` equivalent).
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (python-patterns), `references/source-2-verbatim/` (backend-development).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (python, uv, ruff, pytest, pydantic).

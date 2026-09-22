@@ -27,5 +27,4 @@ Plan → act → observe → verify. Every loop needs a budget, a memory policy,
 7. Verify: replay a failing trace, confirm the fix, and record residual risk + owner.
 
 ## References
-
 - `../mcp-engineering/`, `../skill-design/`, `../../security/agent-security/`.

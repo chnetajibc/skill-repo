@@ -25,7 +25,5 @@ App Router by generation: detect the major, then follow its rules — Server by 
 6. Deploy: environment parity, ISR/cache semantics understood, bundle measured.
 7. Verify: build clean, no client-only APIs on server paths, cache behavior demonstrated, states rendered.
 
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (web-development); scaffold: `references/extra-scaffold-nextjs/`.
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (nextjs, vercel, react).

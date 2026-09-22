@@ -31,7 +31,3 @@ Rebase is for private branches. Shared history is append-only.
 3. Push with `--force-with-lease` only; re-request review after the rewrite.
 4. Abort cleanly (`--abort`) if the surface exceeds understanding.
 5. Verify: log shows intended shape, tests green, reviewers notified.
-
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (history-rebuild).

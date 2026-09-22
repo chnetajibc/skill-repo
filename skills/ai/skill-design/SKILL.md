@@ -25,6 +25,4 @@ Match specificity to risk: thin entrypoint, conditional detail in references, de
 6. Never fabricate APIs/flags/behavior; mark unverified claims explicitly.
 
 ## References
-
-- `references/upstream-skill-creator/` (Anthropic, verbatim: eval-viewer, description-improver).
-- OpenAI progressive-disclosure doctrine mirrored in `../../core/code-review/references/` (review-agent sample).
+- Progressive disclosure: thin entrypoint, conditional detail in references, determinism in scripts — the same doctrine behind this repo's own layout.

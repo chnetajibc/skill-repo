@@ -25,5 +25,4 @@ Choose the substrate by access pattern, then apply the same operational discipli
 6. Verify: migration up+down on scratch, slow-query log reviewed, concurrent-worker test where locking is used.
 
 ## References
-
 - Engine leaves: `../postgres-operations/`, `../mysql/`, `../redis/`, `../mongodb/`; `../database-security/`.

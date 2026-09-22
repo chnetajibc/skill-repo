@@ -21,8 +21,3 @@ Content sets the breakpoints; devices only verify them.
 2. Cover: text wrapping, overflow clipping, aspect ratios, tables→cards on narrow, touch target sizes, safe areas, keyboard-resized viewports.
 3. Test matrix: 320 / 375 / 390 / 768 / 1024 / 1280 / 1440 / 1920+; check each for horizontal scroll, overlap, and truncated content.
 4. Verify: no overflow at any width, readable without zoom on 320, screenshots or ui-verification probes attached.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (ui-visual-composition), `references/source-2-verbatim/` (Junaid-PK frontend-design), `references/source-3-verbatim/` (anthropics frontend-design), `references/source-4-verbatim/` (Xialiang98 visual-frontend).
-- Data: `../design-systems/references/extra-ui-ux-pro-max-verbatim/` (shared, not duplicated); probes: `../ui-verification/`.

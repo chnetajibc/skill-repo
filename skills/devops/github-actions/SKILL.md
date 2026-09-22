@@ -18,12 +18,10 @@ Reproduce CI failures locally first; keep pipelines fast, hermetic, and least-pr
 ## Procedure
 
 1. Gates: lint → typecheck → test → build; fail fast; pin actions by SHA; minimal `permissions:` per job; secrets via encrypted secrets, never logs.
-2. Speed: cache deps properly keyed; matrix only what differs; split slow suites (see `references/upstream-cicd-automation/`).
-3. Triage red CI: read the failing step log, reproduce with the same command locally, fix, then confirm with the upstream fixer checklist (`references/upstream-gh-fix-ci/`).
+2. Speed: cache deps properly keyed; matrix only what differs; split slow suites by path and duration.
+3. Triage red CI: read the failing step log, reproduce with the same command locally, fix, then confirm the same command passes locally.
 4. Review comments: address each with a code change or an evidence-backed reply (`references/` fixer for comment triage lives in github/pr-workflow).
 5. Verify: green run on the PR, no skipped-required-checks, logs free of secrets.
 
 ## References
-
-- `references/upstream-gh-fix-ci/`, `references/upstream-cicd-automation/`.
 - Related: `../docker-compose/`, `../../tooling/ci-cd/`, `../../security/secrets-supply-chain/`.

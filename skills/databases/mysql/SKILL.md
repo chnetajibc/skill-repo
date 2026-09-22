@@ -25,6 +25,5 @@ InnoDB reality: mind the isolation default, the locking reads, and the optimizer
 6. Verify: EXPLAIN evidence, migration up+down, restore drill, deadlock/concurrency test where locking is used.
 
 ## References
-
 - `../fundamentals/`, `../database-security/`.
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (mysql).

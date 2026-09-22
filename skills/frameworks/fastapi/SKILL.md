@@ -25,7 +25,5 @@ Thin routers, injected dependencies, validated boundaries: routes declare, servi
 6. Errors/pagination: one envelope, cursor pagination for mutable lists, idempotency keys on retried mutations.
 7. Verify: TestClient/pytest suite green (happy, validation, authz-cross-user, not-found), OpenAPI renders, lifespan shutdown clean.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (fastapi-patterns), `references/source-2-verbatim/` (backend-development).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (fastapi, pydantic, starlette, sqlalchemy, alembic).

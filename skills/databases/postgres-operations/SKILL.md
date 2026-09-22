@@ -29,7 +29,4 @@ Ship schema + queries + indexes as one artifact; prove performance with EXPLAIN,
 7. Verify: migration up+down on a scratch DB, EXPLAIN output saved, concurrent-worker test where locking is used.
 
 ## References
-
-- `references/upstream-postgres/` (verbatim upstream).
-- `references/upstream-database-audit/` (audit checklist, verbatim upstream).
 - Related: `../../architecture/data-modeling/`, `../../backend/database-design/`.

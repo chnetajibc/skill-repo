@@ -26,6 +26,5 @@ Model by access pattern: documents shaped like the reads that fetch them.
 7. Verify: explain evidence, migration rehearsal, restore drill, concurrency test on transactional paths.
 
 ## References
-
 - `../fundamentals/`, `../database-security/`.
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (mongodb).

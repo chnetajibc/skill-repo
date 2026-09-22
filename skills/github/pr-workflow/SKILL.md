@@ -17,12 +17,8 @@ Small diffs, clear intent, verified discussion. The PR describes why; the diff p
 
 ## Procedure
 
-1. Author: one logical change per PR (~100-line review budget; split if larger), conventional commits, linked issue, test evidence in the body (see `references/upstream-pr-creator/`).
+1. Author: one logical change per PR (~100-line review budget; split if larger), conventional commits, linked issue, test evidence in the body (intent, scope, test evidence).
 2. Review: read the full diff, trace callers/sinks, demand evidence for claims; severities blocker/high/maintainability/optional (see `../../core/code-review/`).
-3. Iterate: answer every comment with a change or an evidence-backed reply (`references/upstream-gh-address-comments/`); re-request review after history rewrites.
+3. Iterate: answer every comment with a change or an evidence-backed reply (change or evidence-backed reply); re-request review after history rewrites.
 4. Protect: required checks, CODEOWNERS coverage, dismiss-stale-approvals on force-push, Dependabot + advisory triage.
 5. Release: semver tag, changelog entry, migration notes; verify artifacts install cleanly.
-
-## References
-
-- `references/upstream-github-ops/`, `references/upstream-pr-creator/`, `references/upstream-gh-address-comments/`.

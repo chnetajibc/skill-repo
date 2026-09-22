@@ -24,7 +24,5 @@ ESM-first modern JavaScript: explicit async, validated boundaries, workspace-awa
 5. Packaging: workspace layout respected; dependency ranges deliberate; lockfile committed.
 6. Verify: tests green on pinned Node, lint clean, no unhandled rejections (fail a probe on purpose to confirm handling).
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (typescript-patterns), `references/source-2-verbatim/` (web-development).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (javascript, nodejs, npm, pnpm, bun, zod).

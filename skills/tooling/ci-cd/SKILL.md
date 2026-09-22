@@ -23,7 +23,5 @@ CI is the gate, not the suggestion box: fast, hermetic, least-privileged.
 4. Secrets via encrypted secrets with minimal permissions; no secrets in logs; pin third-party actions.
 5. Verify: green run on the change, no skipped required checks, failure drill (break it on purpose, watch it fail loud).
 
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (ci-cd-and-automation).
+## References
 - Related: `../../devops/github-actions/`.

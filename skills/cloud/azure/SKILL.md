@@ -26,5 +26,4 @@ Same foundations as `../foundations/`, resolved against current Azure docs.
 7. Verify: scratch deploy, kill-and-recover, restore drill, budget alert confirmed.
 
 ## References
-
 - `../foundations/`, `../aws-foundations/` (procedure pattern).

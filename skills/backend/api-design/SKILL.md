@@ -24,7 +24,3 @@ Implement the contract: correct semantics per protocol, hardened edges, document
 4. Compatibility: additive changes; breaking changes versioned with migration notes and contract tests.
 5. Docs: OpenAPI (or schema registry for GraphQL/gRPC) generated from code, with examples; every error `type` documented.
 6. Verify: protocol-level tests (happy, validation, authz-cross-user, pagination, idempotent-retry, webhook-replay) green; docs render.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (bjornjee), `references/source-2-verbatim/` (khasky), `references/source-3-verbatim/` (addyosmani), `references/source-4-verbatim/` (magnus).

@@ -27,5 +27,4 @@ Principles transfer, service names do not. Decide on principles, then resolve ag
 8. Verify: scratch-env deploy, kill-and-recover drill, restore-from-backup drill, cost report reviewed.
 
 ## References
-
 - Provider leaves: `../aws-foundations/`, `../gcp/`, `../azure/`.

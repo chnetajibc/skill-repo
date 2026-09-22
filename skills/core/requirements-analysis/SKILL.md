@@ -22,7 +22,5 @@ No code before the spec is accepted: objectives, boundaries, acceptance criteria
 3. Review the spec for testability (every claim verifiable) and hand off to planning.
 4. Verify: stakeholder sign-off recorded; analytics hook identified for the success metric.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (spec-driven-development, addyosmani), `references/source-2-verbatim/` (spec-driven-development, magnus).
+## References
 - Related: `../../product/mvp-discovery/`, `../planning/`.

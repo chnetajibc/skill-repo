@@ -34,8 +34,5 @@ OWASP-grounded baseline review. Read-only: report findings with remediation; do 
 - Optional: style-level nits (never blockers).
 
 ## References
-
-- `references/upstream-code-review-security/` — OWASP code-review procedure (verbatim upstream).
-- `references/upstream-web-security-review/` — OWASP web Top 10 procedure (verbatim upstream).
 - Deeper API checks: `../../backend/api-security/`; secrets/CI: `../secrets-supply-chain/`.
 - Implementation integration: this review runs against the implementation (not isolated docs), then hands findings back for fixes; `../../core/code-review/` re-verifies the final diff including the security fixes.

@@ -20,13 +20,8 @@ Secrets and supply-chain hygiene. Findings first, fixes by the code owner.
 
 ## Procedure
 
-1. Secrets: search for hardcoded keys/tokens (patterns in `references/upstream-secrets-scan/`), then check git history for burned keys (rotation required, not just deletion). Never print a real secret in findings; use placeholders.
+1. Secrets: search for hardcoded keys/tokens (entropy + known-prefix patterns), then check git history for burned keys (rotation required, not just deletion). Never print a real secret in findings; use placeholders.
 2. Dependencies: inventory direct + transitive deps, check advisories, then assess reachability — is the vulnerable function actually called? Unreachable + no exploit path = lower priority, still recorded.
-3. CI: review workflows for pwn-request risk, expression injection (`${{ }}` with untrusted input), unpinned actions, over-scoped tokens, and cache poisoning (see `references/upstream-gha-security-review/`).
+3. CI: review workflows for pwn-request risk, expression injection (`${{ }}` with untrusted input), unpinned actions, over-scoped tokens, and cache poisoning (untrusted PRs must not run privileged jobs or exfiltrate secrets).
 4. Report: package, version, advisory/CVE, reachability evidence, fix (pinned upgrade), and regression note.
 5. Verify: re-run the applicable scanner (`npm audit`, `pip-audit`, `govulncheck`, `trivy`, `osv-scanner`) if installed; if no scanner is available, say so explicitly and rely on manual patterns only.
-
-## References
-
-- `references/upstream-secrets-scan/`, `references/upstream-sca-audit/` (OWASP, verbatim).
-- `references/upstream-gha-security-review/` (Sentry, verbatim).

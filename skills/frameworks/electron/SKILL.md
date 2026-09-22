@@ -29,7 +29,5 @@ Two processes, one hard boundary. The renderer is hostile territory; preload is 
 
 - `nodeIntegration: true` for debugging left on; preload exposing entire modules; `shell.openExternal` on unvalidated URLs; loading remote content with privileges; unsigned auto-updates.
 
-## References (verbatim upstream)
-
-- `references/source-1-verbatim/` (secure-software-engineering), `references/source-2-verbatim/` (web-security-review).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (electron).

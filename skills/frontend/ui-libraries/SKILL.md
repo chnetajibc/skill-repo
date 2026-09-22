@@ -38,7 +38,6 @@ Prefer the project's existing design system and primitives over introducing anot
 - Two competing systems in one app; theme overrides fighting the library; unversioned CDN pulls; bundle doubling from overlapping icon/component sets.
 
 ## References
-
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (tailwind, shadcn, radix, mui).
 - Runtime research: `../../research/documentation-search/`.
 - Related: `../design-systems/`, `../accessibility/`, `../responsive-design/`.

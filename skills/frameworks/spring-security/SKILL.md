@@ -30,6 +30,5 @@ Deny by default, permit explicitly, test as an attacker.
 - Permit-all ordering mistakes; CSRF disabled globally; JWT accepted without issuer/audience checks; method security enabled nowhere (annotation present, enforcement off).
 
 ## References
-
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (spring-security, spring-boot, oauth, oidc).
 - Related: `../spring-boot/`, `../../backend/authorization/`, `../../security/secure-baseline/`.

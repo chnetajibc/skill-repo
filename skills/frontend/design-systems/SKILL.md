@@ -22,7 +22,5 @@ System first, screens second: tokens and primitives before one-off styles.
 3. Enforce: no raw hex/spacing outside tokens; no default-palette look; new variants extend the system, not bypass it.
 4. Verify: token coverage audit, dark-mode pass, contrast check, component inventory against the system.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (design-systems-frontend-architecture), `references/source-2-verbatim/` (ui-design).
-- Data: `references/extra-ui-ux-pro-max-verbatim/`; library mechanics: `../ui-libraries/`.
+## References
+- Style/palette research via official component docs (registry: `../../research/documentation-search/references/framework-registry.yaml` — tailwind, shadcn, radix, mui); library mechanics: `../ui-libraries/`.

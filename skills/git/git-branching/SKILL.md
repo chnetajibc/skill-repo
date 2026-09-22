@@ -23,7 +23,3 @@ One feature, one branch, one short life. Strategy follows release reality, not h
 4. Wrong-branch commits: move with `checkout -b` + reset/cherry-pick (see git-recovery), don't drag unrelated work along.
 5. PR prep: atomic commits, protection requirements checked, `gh` PR if available (see github/pr-workflow).
 6. Verify: default branch deployable, stale branches pruned, protection active.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (bjornjee git-workflow), `references/source-2-verbatim/` (addyosmani git-workflow-and-versioning).

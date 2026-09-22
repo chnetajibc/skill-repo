@@ -23,7 +23,3 @@ Optimize for changeability, not abstraction count. Small, named, tested units wi
 4. Smells that block: god modules/classes, hidden temporal coupling, global mutable state, circular deps, leaky abstractions, swallowed errors, stringly-typed APIs.
 5. Anti-over-engineering: every abstraction must name its second caller or the volatile dependency it protects; otherwise inline.
 6. Verify: reviewer can state each unit's contract in one sentence; complexity down or justified; tests unaffected in behavior.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (awesome-code-standards), `references/source-2-verbatim/` (awesome-code-cleanup), `references/source-3-verbatim/` (code-simplification).

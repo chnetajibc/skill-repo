@@ -21,7 +21,3 @@ The repo's formatter is the law; diffs stay minimal.
 2. Format only files the change touches; no drive-by reformats of unrelated code.
 3. Formatter disagreements are resolved by config change + team note, not per-file exceptions.
 4. Verify: formatter check green, diff contains no unrelated hunks.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (awesome-code-standards), `references/source-2-verbatim/` (awesome-code-cleanup).

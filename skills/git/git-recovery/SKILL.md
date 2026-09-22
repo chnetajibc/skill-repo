@@ -22,7 +22,3 @@ Stop, diagnose, then recover with the least destructive tool that works.
 3. Bad merge/rebase on shared history: revert, don't rewrite; coordinate before any history rewrite, then `--force-with-lease`.
 4. Leaked secret: rotate immediately (deletion is not rotation), purge with filter-repo/BFG, force-push with team coordination.
 5. Verify: recovered files diffed against expectation, tests run, team notified of any rewritten history.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (history-salvage), `references/source-2-verbatim/` (history-reset).

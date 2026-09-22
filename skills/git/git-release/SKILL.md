@@ -23,7 +23,3 @@ A release is a verified artifact plus a way back.
 4. Rollback: artifact from the previous release deployable in one step; rollback drill before you need it.
 5. Tool gates: IF hosting CLI exists use it for release creation; ELSE use the UI. Monitor via project observability (see architecture/observability).
 6. Verify: installed artifact smoke-tested, notes published, monitors quiet, rollback path confirmed available.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (shipping-and-launch), `references/source-2-verbatim/` (ci-cd-and-automation).

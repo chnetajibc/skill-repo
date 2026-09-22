@@ -23,7 +23,3 @@ Keep main deployable; make small, reviewable, revertable history.
 4. Push: `--force-with-lease` on your own pushed branch after rebase; never `--force` on shared history.
 5. Tool gates: IF `gh` exists, use it for PR create/status; ELSE use the hosting UI. IF worktrees fit parallel streams, one branch per worktree.
 6. Verify: `git status` clean-or-intentional, CI green, PR linked to issue.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (bjornjee git-workflow), `references/source-2-verbatim/` (addyosmani git-workflow-and-versioning).

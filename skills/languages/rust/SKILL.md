@@ -31,7 +31,5 @@ Ownership is the design tool: encode invariants in types so illegal states do no
 
 - Fighting the borrow checker instead of remodeling ownership; hidden blocking in async; `unwrap` in library code; feature unification surprises across workspace members.
 
-## References (verbatim upstream)
-
-- `references/source-1-verbatim/` (Sentry security-review), `references/source-2-verbatim/` (programming-principles).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (rust, tokio, axum, serde).

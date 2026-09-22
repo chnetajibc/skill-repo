@@ -26,6 +26,4 @@ Boring infrastructure: managed services first, least privilege always, cost alar
 7. Verify: deploy to a scratch env, kill-and-recover drill, restore-from-backup drill, cost report reviewed.
 
 ## References
-
-- `references/upstream-cloud-infrastructure/`, `references/upstream-vercel-deploy/` (deploy checklist pattern).
 - GCP/Azure: apply the same procedure against provider docs; do not invent service behavior.

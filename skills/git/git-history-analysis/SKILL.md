@@ -22,7 +22,3 @@ Let history answer: who changed this, when did it break, what did it look like b
 3. Pickaxe before bisect when cheap: `git log -S'symbol'` / `-G'regex'` for introduction points.
 4. Export: `format-patch` for sharing, `cherry-pick -x` to preserve provenance.
 5. Verify: cited commit hashes in findings; bisect result confirmed by testing the reported commit directly.
-
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (history-salvage).

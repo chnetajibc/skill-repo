@@ -69,8 +69,6 @@ DECISION: Therefore implement Z.
 For version-sensitive, security-sensitive, architectural, migration-related, external-API, or likely-questioned decisions, record: source URL, version, and why this API. No citations on trivial lines.
 
 ## References
-
 - `references/framework-registry.yaml` — central machine-readable registry (official sources + version files).
-- `references/source-verbatim/` (addyosmani source-driven-development, verbatim upstream).
 - `scripts/detect-versions.sh` — repo technology/version detector; `scripts/run-doc-behavior-tests.sh` + `tests/fixtures/` — behavior scenarios.
 - Deltas: `../technology-evaluation/`; compat: `../dependency-evaluation/`.

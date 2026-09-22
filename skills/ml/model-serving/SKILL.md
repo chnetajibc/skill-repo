@@ -23,7 +23,3 @@ No model ships without an eval, a version, and a drift monitor.
 4. Evaluate: offline eval set + online shadow/canary; rollback on regression.
 5. Monitor: prediction drift, data validation failures, latency SLOs; retrain triggers documented.
 6. Verify: eval report, load test at p99, rollback drill.
-
-## References
-
-- `references/upstream-ml-engineering/` (verbatim upstream).

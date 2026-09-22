@@ -31,7 +31,5 @@ Boot favors convention: structure by domain, configure externally, test against 
 
 - Boot-generation API drift; lazy-loading outside transactions; transactions on private/self-invoked methods (proxy bypass); actuator overexposure.
 
-## References (verbatim upstream)
-
-- `references/source-1-verbatim/` (Sentry security-review), `references/source-2-verbatim/` (backend-engineering).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (spring-boot, spring-framework, spring-data, hibernate, junit, mockito, testcontainers).

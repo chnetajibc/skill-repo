@@ -24,7 +24,5 @@ One owner per datum: component state until shared, server state in a query layer
 5. Accessibility baked in (see frontend/accessibility); all interactive states covered (see frontend/component-design).
 6. Verify: no duplicated/mirrored state, effects have cleanups, tests via Testing Library on behavior, a11y pass.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (react), `references/source-2-verbatim/` (web-development).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (react, react-router, tanstack-query, zustand, react-hook-form).

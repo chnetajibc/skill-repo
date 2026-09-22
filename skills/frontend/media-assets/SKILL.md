@@ -45,5 +45,4 @@ reuse existing asset? -> inspect dimensions/type/licensing/fit
 - Duplicate near-identical assets; 5MB hero images; layout shift from dimensionless images; lazy-loading the LCP image; unlicensed stock; SVG XSS via uploads; font-induced invisible text.
 
 ## References
-
 - Related: `../responsive-design/`, `../performance/`, `../accessibility/`, `../technical-seo/` (image SEO).

@@ -22,7 +22,3 @@ Reproduce locally, then fix the system — not the symptom.
 3. Suspect caches first (stale, poisoned, or machine-specific); then environment drift (toolchain versions vs lockfiles/CI images); then native deps (headers, ABI, platform).
 4. Fix at the layer found; pin what drifted; document the required toolchain in the repo.
 5. Verify: clean build green twice in a row, CI agrees with local, no secrets in build logs.
-
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (ci-cd-and-automation).

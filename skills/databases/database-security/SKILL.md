@@ -26,6 +26,5 @@ The database enforces what application bugs forget: least privilege, read-only b
 5. Verify: connect as the app/agent role and confirm a forbidden statement fails; confirm destructive patterns are rejected by the guardrail, not just by policy text.
 
 ## References
-
 - `../postgres-operations/` for operational procedures.
 - `../../security/secrets-supply-chain/` for secret handling.

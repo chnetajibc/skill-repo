@@ -21,7 +21,3 @@ Trust nothing at the boundary: validate, then type.
 2. Reject unknown fields on security-sensitive routes; coerce nothing silently; fail closed with one error envelope.
 3. Validate files by content sniffing + limits (size, dimensions, count), never extension alone; quarantine user uploads (see security/secure-baseline).
 4. Verify: invalid-input test matrix green (missing, wrong type, oversized, hostile strings), errors mapped to statuses without leaking internals.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (backend-development), `references/source-2-verbatim/` (fastapi-patterns).

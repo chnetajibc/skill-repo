@@ -25,6 +25,5 @@ Memory is fast and forgetful: design expiry, eviction, and persistence before tr
 6. Verify: eviction/expiry behavior tested, failover drill, memory-growth monitored, lock contention measured.
 
 ## References
-
 - `../fundamentals/`, `../database-security/`.
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (redis).

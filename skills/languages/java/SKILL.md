@@ -30,7 +30,5 @@ Modern Java first: write to the release in the repo, not to remembered Java 8.
 
 - Source/target mismatch across modules; dependency converges to two versions of one lib; tests passing on a newer JDK than CI/prod.
 
-## References (verbatim upstream)
-
-- `references/source-1-verbatim/` (Sentry security-review), `references/source-2-verbatim/` (programming-principles).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (java, openjdk, maven, gradle, junit, mockito).

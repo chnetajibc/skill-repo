@@ -23,8 +23,3 @@ Prove the cause before the fix: reproduce → minimize → hypothesize → instr
 4. Fix the root cause, not the symptom; add the regression test that fails without the fix.
 5. Guard: check adjacent code for the same defect class; record the RCA briefly.
 6. Verify: repro passes, full related suite green, regression test committed.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (debugging-and-error-recovery), `references/source-2-verbatim/` (systematic-debugging), `references/source-3-verbatim/` (awesome-bug-fix).
-- Upgrade: `references/extra-obra-debugging/` (obra systematic-debugging: root-cause iron law).

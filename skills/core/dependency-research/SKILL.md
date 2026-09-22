@@ -23,7 +23,5 @@ Need it? Prove it. Then pin it, license-check it, and own its updates.
 4. Install pinned (lockfile updated), minimal scope; add a removal path note.
 5. Verify: build + tests green, license check recorded, `audit` clean or findings triaged.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (search-first), `references/source-2-verbatim/` (source-driven-development), `references/source-3-verbatim/` (context-engineering).
+## References
 - Related: `../../research/dependency-evaluation/`, `../../security/secrets-supply-chain/`.

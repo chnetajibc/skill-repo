@@ -22,7 +22,3 @@ Measure first, optimize second, prove third. Intuition-only optimization is a de
 3. Re-measure on the same workload; record before/after numbers in the PR.
 4. Guard: budgets + regression tests so the win survives; no speculative micro-optimizations.
 5. Verify: targets met on representative devices/networks, no functional regression, numbers quoted.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (performance-optimization), `references/source-2-verbatim/` (awesome-performance-audit).

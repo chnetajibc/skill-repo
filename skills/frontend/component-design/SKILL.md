@@ -22,7 +22,3 @@ Every component owns its states: default plus hover/focus/active/disabled/loadin
 3. Forms: labeled inputs, inline validation, error announcements, sensible defaults, keyboard-complete flows.
 4. Navigation/hierarchy: consistent patterns, focus management on route/step change, deep-linkable where applicable.
 5. Verify: state matrix rendered, keyboard + screen-reader pass (see accessibility), ui-verification probes where available.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (interaction-patterns-components), `references/source-2-verbatim/` (design-systems-frontend-architecture).

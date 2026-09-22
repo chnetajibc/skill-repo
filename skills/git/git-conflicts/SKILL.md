@@ -22,7 +22,3 @@ Conflicts are review decisions, not typing exercises: understand intent on both 
 3. Mark resolved (`git add`), continue (`--continue`), and re-run the affected tests before pushing.
 4. Abort criteria: if the conflict surface exceeds understanding, `git merge --abort` / `git rebase --abort` and split the change smaller.
 5. Verify: full diff re-read, tests green, no conflict markers (`grep -r '<<<<<<<'`).
-
-## References (full upstream procedure, verbatim)
-
-- `references/source-verbatim/` (history-rebuild).

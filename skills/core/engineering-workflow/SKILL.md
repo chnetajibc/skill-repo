@@ -23,7 +23,3 @@ Match ceremony to stakes: typo → inspect/edit/test; endpoint → design/implem
 4. Implement thin vertical slices (`../implementation/`); test as proof (`../testing/`).
 5. Review the diff (`../code-review/`), security-review significant changes (`../../security/secure-baseline/`), document decisions (`../documentation/`).
 6. Verify with evidence (tests, builds, runtime output) — never claim success without it — then ship (`../../git/git-release/`).
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (incremental-implementation), `references/source-2-verbatim/` (spec-driven-development), `references/source-3-verbatim/` (planning-and-task-breakdown).

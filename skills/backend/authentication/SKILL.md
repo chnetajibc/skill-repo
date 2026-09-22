@@ -22,7 +22,3 @@ Prove identity server-side; store secrets like attackers read your repo — beca
 3. Tokens: short lifetimes, refresh rotation with reuse detection, revocation path; cookies `HttpOnly`/`Secure`/`SameSite`, CORS allowlisted.
 4. Secrets externalized (vault/env); none in code, logs, or error messages.
 5. Verify: auth matrix (valid/expired/forged/absent) green, cross-checked against docs for the installed library versions.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (code-review-security), `references/source-2-verbatim/` (secure-software-engineering), `references/source-3-verbatim/` (security-review).

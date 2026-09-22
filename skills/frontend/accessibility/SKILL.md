@@ -23,7 +23,3 @@ Accessible by construction, verified by testing — not audited in at the end.
 4. Visual: contrast AA, 44px-class touch targets, focus visible, `prefers-reduced-motion` honored, content usable at 200% zoom.
 5. Forms: programmatic labels, grouped related controls, inline errors with suggestions.
 6. Verify: keyboard-only walkthrough, screen-reader pass on changed flows, automated checks (axe/lighthouse) green, findings tracked as defects not suggestions.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (accessibility-inclusive-design), `references/source-2-verbatim/` (web-accessibility), `references/source-3-verbatim/` (awesome-accessibility-audit).

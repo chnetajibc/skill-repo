@@ -26,5 +26,4 @@ Same foundations as `../foundations/`, resolved against current GCP docs.
 7. Verify: scratch deploy, kill-and-recover, restore drill, billing alert confirmed.
 
 ## References
-
 - `../foundations/`, `../aws-foundations/` (procedure pattern).

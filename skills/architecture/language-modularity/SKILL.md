@@ -55,5 +55,4 @@ Modularity is language-shaped: packages, crates, and modules have different visi
 4. Verify: cycle check green (compiler/lint), public surface diff reviewed, tests per boundary pass.
 
 ## References
-
 - Related: `../modularity/`, `../solid/`, `../../core/repository-understanding/`, language skills in `../../languages/`, framework skills in `../../frameworks/`.

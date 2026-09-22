@@ -26,8 +26,6 @@ Read the diff, not just the files. Every finding needs evidence, a severity, and
 5. Severity: blocker (must fix before merge), high-risk (fix now), maintainability concern (fix or track as debt), optional improvement (author's call).
 6. Verify: confirm tests cover each blocker fix; re-read the final diff; never claim "reviewed, all good" without listing what was checked.
 
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (khasky awesome-code-review: confidence + severity), `references/source-2-verbatim/` (addyosmani: five-axis + sizing), `references/source-3-verbatim/` (openai review-agent: defect-first P0–P3), `references/source-4-verbatim/` (sentry code-review).
+## References
 - Feedback replies: `../../github/pr-workflow/`.
 - Security integration: findings in auth/input/crypto/secrets escalate to `../../security/secure-baseline/`; the security review runs on the implementation, then this review re-verifies the final diff — never the reverse order.

@@ -22,7 +22,3 @@ Deny by default; every path checks; every check is tested cross-user.
 3. Test as an attacker: unauthenticated, low-privilege, cross-user, cross-tenant probes per endpoint; IDOR matrix green before merge.
 4. Tenant isolation: scope every query; support/impersonation access audited (see saas/multitenancy-billing).
 5. Verify: probe results recorded, no fail-open defaults, authorization errors free of enumeration oracles.
-
-## References (full upstream procedures, verbatim)
-
-- `references/source-1-verbatim/` (api-security-review), `references/source-2-verbatim/` (secure-software-engineering), `references/source-3-verbatim/` (security-review).

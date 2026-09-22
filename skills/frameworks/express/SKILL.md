@@ -31,7 +31,5 @@ Express is unopinionated middleware: you own the structure, the error paths, and
 
 - Unhandled async rejections crashing the process; error middleware in the wrong position; CORS `*` with credentials; trusting `req.ip` behind proxies without `trust proxy` review.
 
-## References (verbatim upstream)
-
-- `references/source-1-verbatim/` (Sentry security-review), `references/source-2-verbatim/` (web-development).
+## References
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (nodejs, npm, pnpm, bun, zod).

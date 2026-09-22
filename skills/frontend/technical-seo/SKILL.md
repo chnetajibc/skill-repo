@@ -36,7 +36,6 @@ If a crawler cannot fetch it, render it, or understand it, content quality is ir
 - CSR-only pages with empty initial HTML; canonical pointing at wrong URL; noindex left from staging; redirect chains; duplicate content across locale variants; metadata from the wrong Next.js generation.
 
 ## References
-
 - Registry: `../../research/documentation-search/references/framework-registry.yaml` (nextjs, vercel).
 - Runtime research: `../../research/documentation-search/` (detect Next.js version first).
 - Related: `../performance/`, `../accessibility/` (semantic HTML), `../media-assets/`.
