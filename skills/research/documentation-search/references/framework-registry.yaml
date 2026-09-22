@@ -1,0 +1,468 @@
+# Central framework registry (machine-readable)
+# Purpose: let the agent discover AUTHORITATIVE sources at runtime.
+# This file contains NO documentation content — only pointers.
+# Convention: every entry names official docs first; community sources never appear here.
+# Usage: documentation-search resolves technology -> entry -> official_docs for the INSTALLED version.
+# `version_files` lists repo files (in priority order) that pin the version the project uses.
+# Rule: installed version != latest version. Never substitute latest docs for pinned-version docs.
+
+python:
+  ecosystem: language
+  official_docs: https://docs.python.org/
+  typing: https://typing.python.org/
+  packaging: https://packaging.python.org/
+  package_registry: https://pypi.org/
+  version_files: [pyproject.toml, uv.lock, requirements.txt, poetry.lock, Pipfile.lock, .python-version]
+uv:
+  ecosystem: python-packaging
+  official_docs: https://docs.astral.sh/uv/
+  version_files: [uv.lock, pyproject.toml]
+ruff:
+  ecosystem: python-lint
+  official_docs: https://docs.astral.sh/ruff/
+  version_files: [pyproject.toml, ruff.toml, .ruff.toml]
+pytest:
+  ecosystem: python-test
+  official_docs: https://docs.pytest.org/
+  version_files: [pyproject.toml, requirements.txt, uv.lock]
+fastapi:
+  ecosystem: python-web
+  official_docs: https://fastapi.tiangolo.com/
+  official_repository: https://github.com/fastapi/fastapi
+  package_registry: https://pypi.org/project/fastapi/
+  version_files: [pyproject.toml, uv.lock, requirements.txt]
+pydantic:
+  ecosystem: python-validation
+  official_docs: https://docs.pydantic.dev/
+  official_repository: https://github.com/pydantic/pydantic
+  version_files: [pyproject.toml, uv.lock, requirements.txt]
+starlette:
+  ecosystem: python-web
+  official_docs: https://www.starlette.io/
+  version_files: [pyproject.toml, uv.lock, requirements.txt]
+sqlalchemy:
+  ecosystem: python-orm
+  official_docs: https://docs.sqlalchemy.org/
+  official_migration_docs: https://docs.sqlalchemy.org/en/20/changelog/migration_20.html
+  version_files: [pyproject.toml, uv.lock, requirements.txt]
+alembic:
+  ecosystem: python-migrations
+  official_docs: https://alembic.sqlalchemy.org/
+  version_files: [pyproject.toml, uv.lock, alembic.ini]
+javascript:
+  ecosystem: language
+  official_docs: https://developer.mozilla.org/
+  official_spec: https://tc39.es/ecma262/
+  version_files: [package.json]
+nodejs:
+  ecosystem: js-runtime
+  official_docs: https://nodejs.org/docs/latest/
+  official_repository: https://github.com/nodejs/node
+  version_files: [package.json, .nvmrc, .node-version]
+typescript:
+  ecosystem: language
+  official_docs: https://www.typescriptlang.org/docs/
+  official_repository: https://github.com/microsoft/TypeScript
+  version_files: [package.json, tsconfig.json, pnpm-lock.yaml, package-lock.json, yarn.lock, bun.lock]
+npm:
+  ecosystem: js-packaging
+  official_docs: https://docs.npmjs.com/
+  version_files: [package.json, package-lock.json]
+pnpm:
+  ecosystem: js-packaging
+  official_docs: https://pnpm.io/
+  version_files: [package.json, pnpm-lock.yaml, pnpm-workspace.yaml]
+bun:
+  ecosystem: js-runtime
+  official_docs: https://bun.sh/docs
+  version_files: [package.json, bun.lock, bun.lockb]
+react:
+  ecosystem: js-ui
+  official_docs: https://react.dev/
+  official_repository: https://github.com/facebook/react
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock, bun.lock]
+react-router:
+  ecosystem: js-routing
+  official_docs: https://reactrouter.com/
+  version_files: [package.json]
+tanstack-query:
+  ecosystem: js-data
+  official_docs: https://tanstack.com/query/latest
+  version_files: [package.json]
+zustand:
+  ecosystem: js-state
+  official_docs: https://zustand.docs.pmnd.rs/
+  version_files: [package.json]
+zod:
+  ecosystem: js-validation
+  official_docs: https://zod.dev/
+  version_files: [package.json]
+react-hook-form:
+  ecosystem: js-forms
+  official_docs: https://react-hook-form.com/
+  version_files: [package.json]
+nextjs:
+  ecosystem: js-framework
+  official_docs: https://nextjs.org/docs
+  official_repository: https://github.com/vercel/next.js
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock, bun.lock]
+vercel:
+  ecosystem: hosting
+  official_docs: https://vercel.com/docs
+  version_files: [vercel.json, package.json]
+tailwind:
+  ecosystem: css
+  official_docs: https://tailwindcss.com/docs
+  version_files: [package.json, tailwind.config.js, tailwind.config.ts]
+shadcn:
+  ecosystem: js-components
+  official_docs: https://ui.shadcn.com/
+  official_repository: https://github.com/shadcn-ui/ui
+  version_files: [package.json, components.json]
+radix:
+  ecosystem: js-components
+  official_docs: https://www.radix-ui.com/
+  version_files: [package.json]
+mui:
+  ecosystem: js-components
+  official_docs: https://mui.com/
+  version_files: [package.json]
+vite:
+  ecosystem: js-build
+  official_docs: https://vite.dev/guide/
+  official_repository: https://github.com/vitejs/vite
+  version_files: [package.json, vite.config.ts, vite.config.js]
+eslint:
+  ecosystem: js-lint
+  official_docs: https://eslint.org/docs/latest/
+  version_files: [package.json, eslint.config.js, .eslintrc.json]
+prettier:
+  ecosystem: js-format
+  official_docs: https://prettier.io/docs/
+  version_files: [package.json, .prettierrc, prettier.config.js]
+react-native:
+  ecosystem: mobile
+  official_docs: https://reactnative.dev/docs/getting-started
+  official_repository: https://github.com/facebook/react-native
+  version_files: [package.json, app.json]
+expo:
+  ecosystem: mobile
+  official_docs: https://docs.expo.dev/
+  official_repository: https://github.com/expo/expo
+  expo_router: https://docs.expo.dev/router/introduction/
+  eas: https://docs.expo.dev/eas/
+  version_files: [package.json, app.json, app.config.js, app.config.ts]
+electron:
+  ecosystem: desktop
+  official_docs: https://www.electronjs.org/docs/latest/
+  official_repository: https://github.com/electron/electron
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock]
+java:
+  ecosystem: language
+  official_docs: https://docs.oracle.com/en/java/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+openjdk:
+  ecosystem: language
+  official_docs: https://openjdk.org/
+  version_files: [pom.xml, build.gradle, .java-version]
+maven:
+  ecosystem: java-build
+  official_docs: https://maven.apache.org/guides/
+  version_files: [pom.xml]
+gradle:
+  ecosystem: java-build
+  official_docs: https://docs.gradle.org/
+  version_files: [build.gradle, build.gradle.kts, gradle.lockfile, settings.gradle]
+spring-boot:
+  ecosystem: java-framework
+  official_docs: https://docs.spring.io/spring-boot/
+  official_repository: https://github.com/spring-projects/spring-boot
+  version_files: [pom.xml, build.gradle, build.gradle.kts, gradle.lockfile]
+spring-framework:
+  ecosystem: java-framework
+  official_docs: https://docs.spring.io/spring-framework/reference/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+spring-security:
+  ecosystem: java-security
+  official_docs: https://docs.spring.io/spring-security/reference/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+spring-data:
+  ecosystem: java-data
+  official_docs: https://docs.spring.io/spring-data/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+spring-cloud:
+  ecosystem: java-distributed
+  official_docs: https://docs.spring.io/spring-cloud/docs/current/reference/html/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+hibernate:
+  ecosystem: java-orm
+  official_docs: https://hibernate.org/orm/documentation/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+junit:
+  ecosystem: java-test
+  official_docs: https://junit.org/junit5/docs/current/user-guide/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+mockito:
+  ecosystem: java-test
+  official_docs: https://site.mockito.org/
+  version_files: [pom.xml, build.gradle, build.gradle.kts]
+testcontainers:
+  ecosystem: test-infra
+  official_docs: https://testcontainers.com/guides/
+  version_files: [pom.xml, build.gradle, build.gradle.kts, package.json, pyproject.toml, go.mod]
+go:
+  ecosystem: language
+  official_docs: https://go.dev/doc/
+  official_api_reference: https://pkg.go.dev/std
+  official_modules: https://go.dev/ref/mod
+  official_repository: https://github.com/golang/go
+  version_files: [go.mod, go.sum, go.work]
+rust:
+  ecosystem: language
+  official_docs: https://doc.rust-lang.org/
+  official_book: https://doc.rust-lang.org/book/
+  official_api_reference: https://doc.rust-lang.org/std/
+  official_cargo: https://doc.rust-lang.org/cargo/
+  official_repository: https://github.com/rust-lang/rust
+  version_files: [Cargo.toml, Cargo.lock, rust-toolchain.toml]
+tokio:
+  ecosystem: rust-async
+  official_docs: https://tokio.rs/
+  version_files: [Cargo.toml, Cargo.lock]
+axum:
+  ecosystem: rust-web
+  official_docs: https://docs.rs/axum/
+  version_files: [Cargo.toml, Cargo.lock]
+serde:
+  ecosystem: rust-serialization
+  official_docs: https://serde.rs/
+  version_files: [Cargo.toml, Cargo.lock]
+postgresql:
+  ecosystem: database
+  official_docs: https://www.postgresql.org/docs/
+  version_files: [Dockerfile, compose.yaml, compose.yml]
+mysql:
+  ecosystem: database
+  official_docs: https://dev.mysql.com/doc/
+  version_files: [Dockerfile, compose.yaml, compose.yml]
+mongodb:
+  ecosystem: database
+  official_docs: https://www.mongodb.com/docs/
+  version_files: [Dockerfile, compose.yaml, compose.yml]
+sqlite:
+  ecosystem: database
+  official_docs: https://www.sqlite.org/docs.html
+  version_files: [Dockerfile]
+redis:
+  ecosystem: database
+  official_docs: https://redis.io/docs/
+  version_files: [Dockerfile, compose.yaml, compose.yml]
+chroma:
+  ecosystem: vector-db
+  official_docs: https://docs.trychroma.com/
+  version_files: [pyproject.toml, requirements.txt, package.json]
+prisma:
+  ecosystem: js-orm
+  official_docs: https://www.prisma.io/docs/
+  version_files: [package.json, prisma/schema.prisma]
+drizzle:
+  ecosystem: js-orm
+  official_docs: https://orm.drizzle.team/docs/overview
+  version_files: [package.json]
+docker:
+  ecosystem: containers
+  official_docs: https://docs.docker.com/
+  version_files: [Dockerfile, .docker-version]
+docker-compose:
+  ecosystem: containers
+  official_docs: https://docs.docker.com/compose/
+  version_files: [compose.yaml, compose.yml, Dockerfile]
+kubernetes:
+  ecosystem: orchestration
+  official_docs: https://kubernetes.io/docs/
+  version_files: [helm-chart/Chart.yaml]
+helm:
+  ecosystem: orchestration
+  official_docs: https://helm.sh/docs/
+  version_files: [helm-chart/Chart.yaml, Chart.yaml]
+nginx:
+  ecosystem: proxy
+  official_docs: https://nginx.org/en/docs/
+  version_files: [Dockerfile, nginx.conf]
+terraform:
+  ecosystem: iac
+  official_docs: https://developer.hashicorp.com/terraform/docs
+  version_files: [.terraform.lock.hcl]
+github:
+  ecosystem: vcs-hosting
+  official_docs: https://docs.github.com/
+  official_actions: https://docs.github.com/actions
+  official_rest: https://docs.github.com/rest
+  official_cli: https://cli.github.com/manual/
+  version_files: [.github/workflows]
+linux:
+  ecosystem: os
+  official_kernel: https://docs.kernel.org/
+  official_ubuntu: https://documentation.ubuntu.com/
+  official_systemd: https://systemd.io/
+  official_systemd_man: https://www.freedesktop.org/software/systemd/man/
+aws:
+  ecosystem: cloud
+  official_docs: https://docs.aws.amazon.com/
+  official_cli: https://docs.aws.amazon.com/cli/
+  service_docs:
+    ec2: https://docs.aws.amazon.com/ec2/
+    s3: https://docs.aws.amazon.com/s3/
+    ecs: https://docs.aws.amazon.com/ecs/
+    eks: https://docs.aws.amazon.com/eks/
+    lambda: https://docs.aws.amazon.com/lambda/
+    rds: https://docs.aws.amazon.com/rds/
+    dynamodb: https://docs.aws.amazon.com/dynamodb/
+    sqs: https://docs.aws.amazon.com/sqs/
+    sns: https://docs.aws.amazon.com/sns/
+    cloudwatch: https://docs.aws.amazon.com/cloudwatch/
+    iam: https://docs.aws.amazon.com/iam/
+    vpc: https://docs.aws.amazon.com/vpc/
+gcp:
+  ecosystem: cloud
+  official_docs: https://cloud.google.com/docs
+azure:
+  ecosystem: cloud
+  official_docs: https://learn.microsoft.com/azure/
+openapi:
+  ecosystem: api-spec
+  official_docs: https://spec.openapis.org/
+graphql:
+  ecosystem: api-spec
+  official_docs: https://graphql.org/learn/
+grpc:
+  ecosystem: api-rpc
+  official_docs: https://grpc.io/docs/
+oauth:
+  ecosystem: auth-spec
+  official_docs: https://oauth.net/2/
+oidc:
+  ecosystem: auth-spec
+  official_docs: https://openid.net/developers/how-connect-works/
+opentelemetry:
+  ecosystem: observability
+  official_docs: https://opentelemetry.io/docs/
+prometheus:
+  ecosystem: observability
+  official_docs: https://prometheus.io/docs/
+grafana:
+  ecosystem: observability
+  official_docs: https://grafana.com/docs/
+sentry:
+  ecosystem: observability
+  official_docs: https://docs.sentry.io/
+playwright:
+  ecosystem: e2e-test
+  official_docs: https://playwright.dev/docs/intro
+  version_files: [package.json]
+cypress:
+  ecosystem: e2e-test
+  official_docs: https://docs.cypress.io/
+  version_files: [package.json, cypress.config.ts]
+pytorch:
+  ecosystem: ml
+  official_docs: https://pytorch.org/docs/
+  version_files: [pyproject.toml, requirements.txt]
+huggingface:
+  ecosystem: ml-platform
+  official_docs: https://huggingface.co/docs
+transformers:
+  ecosystem: ml
+  official_docs: https://huggingface.co/docs/transformers/
+  version_files: [pyproject.toml, requirements.txt]
+numpy:
+  ecosystem: ml-data
+  official_docs: https://numpy.org/doc/
+pandas:
+  ecosystem: ml-data
+  official_docs: https://pandas.pydata.org/docs/
+scikit-learn:
+  ecosystem: ml
+  official_docs: https://scikit-learn.org/stable/
+onnx:
+  ecosystem: ml-interop
+  official_docs: https://onnx.ai/onnx/
+onnx-runtime:
+  ecosystem: ml-serving
+  official_docs: https://onnxruntime.ai/docs/
+tensorrt:
+  ecosystem: ml-serving
+  official_docs: https://docs.nvidia.com/deeplearning/tensorrt/
+triton:
+  ecosystem: ml-serving
+  official_docs: https://docs.nvidia.com/deeplearning/triton-inference-server/
+cuda:
+  ecosystem: ml-gpu
+  official_docs: https://docs.nvidia.com/cuda/
+wandb:
+  ecosystem: ml-ops
+  official_docs: https://docs.wandb.ai/
+mlflow:
+  ecosystem: ml-ops
+  official_docs: https://mlflow.org/docs/latest/
+fiftyone:
+  ecosystem: ml-data
+  official_docs: https://docs.voxel51.com/
+mcp:
+  ecosystem: agent-protocol
+  official_docs: https://modelcontextprotocol.io/
+  official_spec: https://modelcontextprotocol.io/specification
+  official_repository: https://github.com/modelcontextprotocol
+  version_files: [package.json, pyproject.toml]
+openai:
+  ecosystem: llm-api
+  official_docs: https://platform.openai.com/docs/
+  official_api_reference: https://platform.openai.com/docs/api-reference
+  official_repository: https://github.com/openai
+anthropic:
+  ecosystem: llm-api
+  official_docs: https://docs.anthropic.com/
+gemini:
+  ecosystem: llm-api
+  official_docs: https://ai.google.dev/gemini-api/docs
+stripe:
+  ecosystem: payments
+  official_docs: https://docs.stripe.com/
+  official_api_reference: https://docs.stripe.com/api
+  version_files: [package.json, pyproject.toml, go.mod]
+supabase:
+  ecosystem: backend-platform
+  official_docs: https://supabase.com/docs
+firebase:
+  ecosystem: backend-platform
+  official_docs: https://firebase.google.com/docs
+minio:
+  ecosystem: storage
+  official_docs: https://min.io/docs/
+cloudflare:
+  ecosystem: edge
+  official_docs: https://developers.cloudflare.com/
+express:
+  ecosystem: js-server
+  official_docs: https://expressjs.com/
+  official_repository: https://github.com/expressjs/express
+  version_files: [package.json, package-lock.json, pnpm-lock.yaml, yarn.lock]
+chakra:
+  ecosystem: js-components
+  official_docs: https://chakra-ui.com/
+  version_files: [package.json]
+antd:
+  ecosystem: js-components
+  official_docs: https://ant.design/
+  version_files: [package.json]
+headlessui:
+  ecosystem: js-components
+  official_docs: https://headlessui.com/
+  version_files: [package.json]
+react-aria:
+  ecosystem: js-components
+  official_docs: https://react-spectrum.adobe.com/react-aria/
+  version_files: [package.json]
+schema-org:
+  ecosystem: seo-spec
+  official_docs: https://schema.org/

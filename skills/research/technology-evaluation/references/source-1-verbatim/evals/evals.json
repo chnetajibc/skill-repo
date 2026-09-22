@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "skill_name": "technology-radar",
+  "evals": [
+    {
+      "id": "quadrant-placement",
+      "prompt": "Our engineering org wants a technology radar to govern what we adopt. We are considering several technologies including a new frontend framework, an internal tool we already use everywhere, and a database that won a hackathon. How do I place technologies in the Adopt, Trial, Assess, and Hold quadrants, and what distinguishes them?",
+      "expected_output": "A radar placement framework with the quadrants defined by their operational meaning: Adopt for technologies we use widely with demonstrated fit and are confident recommending; Trial for technologies we are running in limited production scope with deliberate evaluation; Assess for technologies we are exploring with a small prototype to build evidence; and Hold for technologies we deliberately do not adopt or are phasing out. The response applies the definitions to the examples: the frontend framework goes to Assess or Trial depending on evidence so far, the internal tool's placement depends on whether it is a proven default (Adopt) or a growing liability (Hold), and the hackathon database goes to Assess — exploration is fine, but a hackathon demo is not evidence for production adoption. It explains the cardinal rules: a technology cannot move to Adopt without production evidence, Hold is a decision not a punishment, and placement is reviewed on a cadence.",
+      "assertions": [
+        "The quadrants are defined by operational meaning: production evidence, trial scope, exploration, and deliberate non-adoption",
+        "Each example technology is placed with reasoning tied to evidence",
+        "The hackathon-database example is placed in Assess with the explanation that demos are not adoption evidence",
+        "The rules about evidence requirements for Adopt and the meaning of Hold are stated",
+        "A review cadence for placements is included"
+      ]
+    },
+    {
+      "id": "build-vs-buy-tco",
+      "prompt": "We need a feature that some teams think we should build and others want to buy. The build team says 'it is only a few weeks of work' and the buy advocates point to the sticker price. How do I structure a build-versus-buy decision with a real TCO analysis?",
+      "expected_output": "A build-versus-buy decision structured around total cost of ownership rather than the sticker price or the build estimate: the response defines the cost model covering build cost (development plus ongoing maintenance, support, and feature evolution at a stated annual maintenance rate), buy cost (license or subscription plus integration, customization, and vendor management), and the less tangible dimensions: time to capability, control and extensibility, risk (abandonment, lock-in, security posture), and fit to the actual requirement. It makes the assumptions explicit — including that the build estimate usually understates maintenance — and identifies the decision's critical uncertainty with the smallest step to resolve it, such as a scoped trial of the vendor product against a prototype of the built version. The output names the decision, alternatives, evidence, and the conditions that would change it.",
+      "assertions": [
+        "TCO covers build plus maintenance and buy plus integration and vendor management, not just headline numbers",
+        "Non-financial dimensions such as time to capability, control, and risk are included",
+        "The maintenance-cost assumption and build-estimate optimism are made explicit",
+        "The critical uncertainty and the smallest resolution step are identified",
+        "The output records the decision, alternatives, evidence, and change conditions"
+      ]
+    },
+    {
+      "id": "deprecation-policy",
+      "prompt": "We have a legacy database that is stable but increasingly hard to staff, and a library that we know is unmaintained and vulnerable. I want to move both to Hold and phase them out. What does a deprecation policy look like, and how do I communicate it without alienating teams?",
+      "expected_output": "A deprecation policy that treats Hold as the start of a managed retirement, not a label: the response defines the policy components for each technology — the stated reason for the hold (maintainability, security, strategic fit), the transition guidance (what to use instead and who helps migrate), the timeline and milestones with migration support and owners, and the exceptions process for genuinely blocked cases. It explains the communication approach: the radar entry names the alternative and the support path so teams are not left stranded, deprecation is announced with enough runway for existing commitments, and the policy is enforced at the gate for new usage (no new systems on a Held technology) while existing systems get a realistic migration window. The response also covers measuring the retirement: tracking remaining usage and completing the removal when the last workload migrates.",
+      "assertions": [
+        "The policy defines reason, alternative, support path, timeline, owners, and an exceptions process",
+        "Hold blocks new usage at the gate while existing systems get a migration window",
+        "Communication includes the replacement and support so teams are not stranded",
+        "The deprecation is measured by remaining usage with a defined completion",
+        "The policy differentiates the database and library cases appropriately"
+      ]
+    },
+    {
+      "id": "governance-process",
+      "prompt": "Right now any team can introduce any technology and we discover the consequences later. I want architecture governance that reviews technology choices without becoming a bureaucratic approval board that blocks everything. How do I design the process?",
+      "expected_output": "A proportional governance process that first assesses reversibility, scope, risk, blast radius, regulation, and cross-team impact, then selects the lightest adequate mode: automated policy, federated decision, advice process, or centralized review. It gives each mode a clear authority model and minimum evidence, uses centralized review only for genuinely consequential choices, and records exceptions, conditions, and reconsideration triggers. It also closes the loop by feeding implementation and operational evidence into standards and radar decisions, while preserving explicit boundaries with enterprise architecture, ADR authoring, implementation, security engineering, and operations.",
+      "assertions": [
+        "The process assesses reversibility, scope, risk, blast radius, regulation, and cross-team impact",
+        "Automated policy, federated decision, advice process, and centralized review are distinguished as governance modes",
+        "The output avoids treating a standing board or fixed process timing as mandatory for every decision",
+        "Exceptions include scope, reason, owner, compensating controls, and an expiry or revisit trigger",
+        "Implementation and operational evidence feeds later standards or radar decisions"
+      ]
+    },
+    {
+      "id": "governance-mode-selection",
+      "prompt": "A team wants to change an internal library used by three services. The change is easy to revert, has no regulatory implications, but could create incompatible interfaces if other teams are surprised. Which architecture-governance path should we use and what should we record?",
+      "expected_output": "A federated decision or advice process is selected instead of mandatory centralized approval, because the change is reversible and bounded but has cross-team interface impact. The response names the local decision owner, affected consultees, compatibility checks, published scope, decision rationale, and an escalation condition if the change expands or creates an unresolved shared contract conflict.",
+      "assertions": [
+        "A local or federated path is preferred over centralized review because the change is reversible and bounded",
+        "Cross-team interface impact leads to consultation, compatibility checks, or published notice",
+        "The output names decision ownership and an escalation condition",
+        "The response does not pretend that low risk means no coordination is needed"
+      ]
+    },
+    {
+      "id": "automated-policy-and-exception",
+      "prompt": "We want a CI rule requiring approved encryption settings across all new services, but teams sometimes need a documented exception for an external integration. Design the governance approach.",
+      "expected_output": "An automated policy is used for the objective encryption requirement, with a visible failing check, rationale, owner, and a bounded exception path. The exception record includes scope, reason, risk, compensating controls, accountable owner, expiry or review trigger, and closure evidence. The response says to escalate if exceptions become frequent or the rule is masking a judgment that automation cannot safely decide.",
+      "assertions": [
+        "The objective requirement is assigned to automated policy rather than a recurring manual approval",
+        "The policy has an owner, visible failure output, and a stated rationale",
+        "The exception path records scope, reason, compensating controls, owner, and expiry or revisit trigger",
+        "Recurring or unsafe exceptions trigger policy review or stronger governance"
+      ]
+    },
+    {
+      "id": "governance-boundary",
+      "prompt": "An executive asks for an enterprise capability map and target-state roadmap, while another team asks for an ADR template and a production incident runbook. Should the technology-radar architecture-governance method own all three?",
+      "expected_output": "No. Enterprise capability mapping and target-state roadmaps belong to enterprise architecture; ADR structure belongs to ADR authoring; and incident response/runbooks belong to operations or SRE. Technology-radar may supply technology portfolio posture, governance-mode selection, standards, exceptions, and feedback links at the boundaries, but it should not absorb those neighboring workflows.",
+      "assertions": [
+        "Enterprise capability and target-state roadmap work is routed away from technology-radar",
+        "The enterprise-architecture owner is named for capability and target-state work",
+        "ADR authoring is identified as a separate neighboring owner",
+        "Incident response and operational runbooks are identified as separate operational ownership",
+        "The response preserves technology-radar's technology portfolio and governance boundary"
+      ]
+    },
+    {
+      "id": "tech-debt-prioritization",
+      "prompt": "Our codebase has accumulated technical debt: an aging build system, duplicated modules, an outdated library with known issues, and a growing test suite that takes too long. The team wants to 'fix the debt' but disagrees on what to do first. How do I quantify and prioritize remediation?",
+      "expected_output": "A technical-debt register and prioritization that makes the trade-offs visible: the response builds a register with an entry per debt item — principal (the cost of remediation estimated from the affected code), interest (the ongoing cost of not fixing: maintenance friction, incident risk, slower delivery), and the trigger conditions (the pain is paid when a change touches that area), then prioritizes by interest relative to principal and by how much the debt blocks current and planned work. The response explains the framework's rule: a debt is worth fixing when its interest exceeds the cost of remediation, and prioritization accounts for touch frequency — the build system that every change passes through pays interest daily and outranks a rarely touched module even if its principal is similar. It prescribes the sequencing and the metrics to show progress (remediation velocity, interest trend) so the work is not a one-time cleanup that regenerates.",
+      "assertions": [
+        "Debt items are entered in a register with principal, interest, and trigger conditions",
+        "Prioritization compares interest to principal and considers touch frequency",
+        "The frequently-touched build system is prioritized over a rarely touched module on interest grounds",
+        "Sequencing and progress metrics are prescribed",
+        "The framework prevents remediation from being a one-time cleanup that regenerates"
+      ]
+    }
+  ]
+}

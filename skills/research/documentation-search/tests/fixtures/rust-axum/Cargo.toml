@@ -1,0 +1,7 @@
+[package]
+name = "svc"
+edition = "2021"
+[dependencies]
+axum = "0.7.5"
+tokio = { version = "1.40", features = ["full"] }
+serde = "1.0"

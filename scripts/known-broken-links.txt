@@ -1,0 +1,10 @@
+# Pre-existing broken links inherited from verbatim upstream bodies (addyosmani layout).
+# Each line: relative-link-target. New broken links NOT on this list FAIL validation.
+# Migration: per-skill references-first rewrite removes these as skills are migrated.
+../../references/definition-of-done.md
+../../references/security-checklist.md
+../../references/performance-checklist.md
+../../references/accessibility-checklist.md
+../../references/observability-checklist.md
+../../references/testing-patterns.md
+../../etc/passwd
